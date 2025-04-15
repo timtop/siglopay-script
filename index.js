@@ -1,7 +1,7 @@
 alert("This is working script");
 gsap.registerPlugin(ScrollTrigger);
 
-// Lenis Init
+// Check screen size
 let isMobile = false;
 
 function checkDevice() {
@@ -13,8 +13,9 @@ function checkDevice() {
 }
 checkDevice();
 window.addEventListener("resize", checkDevice);
+//Check screen size ends
 
-//Smooth Scroll
+//Smooth Scroll init Lenis
 const lenis = new Lenis();
 
 function raf(time) {
@@ -28,4 +29,24 @@ lenis.on("scroll", ScrollTrigger.update);
 
 gsap.ticker.add((time) => {
   lenis.raf(time * 1000);
+});
+//Init Lenis ends
+
+//3 keys animation
+gsap.set(".c-key", {
+  opacity: 1,
+});
+
+gsap.from(".c-key", {
+  opacity: 0,
+  y: -20,
+  ease: "none",
+  stagger: 0.1,
+  //   opacity: 1,
+
+  scrollTrigger: {
+    start: "bottom 75%",
+    trigger: ".c-hero",
+    markers: true,
+  },
 });
