@@ -1,4 +1,4 @@
-alert("This is working script");
+// alert("This is working script");
 gsap.registerPlugin(ScrollTrigger);
 
 // Check screen size
@@ -42,8 +42,6 @@ gsap.from(".c-key", {
   y: -20,
   ease: "none",
   stagger: 0.1,
-  //   opacity: 1,
-
   scrollTrigger: {
     start: "bottom 75%",
     trigger: ".c-hero",
