@@ -47,6 +47,6 @@ gsap.from(".c-key", {
   scrollTrigger: {
     start: "bottom 75%",
     trigger: ".c-hero",
-    markers: true,
+    // markers: true,
   },
 });
