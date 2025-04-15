@@ -48,3 +48,21 @@ gsap.from(".c-key", {
     // markers: true,
   },
 });
+//3 keys animation ends
+
+// Card animation
+gsap.set(".c-card", {
+  opacity: 1,
+});
+
+gsap.from(".c-card", {
+  opacity: 0,
+  y: -20,
+  ease: "none",
+  stagger: 0.5,
+  scrollTrigger: {
+    start: "top 70%",
+    trigger: ".c-movemoney",
+    // markers: true,
+  },
+});
