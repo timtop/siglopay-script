@@ -1,5 +1,5 @@
 // alert("This is working script");
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 // Check screen size
 let isMobile = false;
@@ -65,4 +65,37 @@ gsap.from(".c-card", {
     trigger: ".c-movemoney",
     // markers: true,
   },
+});
+
+// Text animation
+// gsap.set("#hero-text", {
+//   opacity: 0,
+// });
+
+// gsap.to("#hero-text", {
+//   text: "Change all the Payments, Made International.",
+//   delimiter: "",
+//   duration: 2,
+//   opacity: 1,
+// });
+
+document.fonts.ready.then(() => {
+  const textTl = gsap.timeline();
+  textTl
+    .set([".mint-coloured_text", ".dark-coloured_text"], {
+      opacity: 0,
+      text: "",
+    })
+    .to(".mint-coloured_text", {
+      text: "Borderless Payments,",
+      delimiter: "",
+      duration: 1,
+      opacity: 1,
+    })
+    .to(".dark-coloured_text", {
+      text: "Made Local.",
+      delimiter: "",
+      duration: 1,
+      opacity: 1,
+    });
 });
