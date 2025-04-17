@@ -139,7 +139,7 @@ document.fonts.ready.then(() => {
 
     const headertl = gsap.timeline({
       scrollTrigger: {
-        markers: true,
+        // markers: true,
         trigger: header,
         start: "top 90%",
       },
