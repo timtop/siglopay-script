@@ -148,7 +148,7 @@ document.fonts.ready.then(() => {
       duration: 0.002,
       y: "0%",
       delay: 0.3,
-      opacity: 0.1,
+      opacity: 0.6,
       rotationX: -0,
       ease: "power1.none",
       stagger: {
