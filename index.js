@@ -1,5 +1,5 @@
 // alert("This is working script");
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
+gsap.registerPlugin(ScrollTrigger, TextPlugin, SplitText);
 
 // Check screen size
 let isMobile = false;
@@ -79,7 +79,9 @@ gsap.from(".c-card", {
 //   opacity: 1,
 // });
 
+// Text animation
 document.fonts.ready.then(() => {
+  //Type writing effect on the hero
   const textTl = gsap.timeline();
   textTl
     .set([".mint-coloured_text", ".dark-coloured_text"], {
@@ -98,4 +100,61 @@ document.fonts.ready.then(() => {
       duration: 1,
       opacity: 1,
     });
+
+  // Heading text animation words flowing from below
+  // const headerText = document.querySelectorAll("[data-title]");
+  // headerText.forEach((header) => {
+  //   gsap.set(header, { opacity: 1 });
+
+  //   const results = new SplitText(header, {
+  //     type: "words",
+  //     wordsClass: "header",
+  //   });
+
+  //   const headertl = gsap.timeline({
+  //     scrollTrigger: {
+  //       markers: true,
+  //       trigger: header,
+  //       start: "top 90%",
+  //     },
+  //   });
+  //   headertl.from(results.words, {
+  //     duration: 1.2,
+  //     yPercent: 100,
+  //     ease: "power3.out",
+  //     stagger: 0.25,
+  //     opacity: 0,
+  //   });
+  // });
+
+  //Heading text retrying
+  const headerText = document.querySelectorAll("[data-title]");
+  headerText.forEach((header) => {
+    gsap.set(header, { opacity: 1 });
+
+    const results = new SplitText(header, {
+      type: "chars",
+      charsClass: "header",
+    });
+
+    const headertl = gsap.timeline({
+      scrollTrigger: {
+        markers: true,
+        trigger: header,
+        start: "top 90%",
+      },
+    });
+    headertl.from(results.chars, {
+      duration: 0.002,
+      y: "0%",
+      delay: 0.3,
+      opacity: 0.1,
+      rotationX: -0,
+      ease: "power1.none",
+      stagger: {
+        amount: 0.8,
+        from: "start",
+      },
+    });
+  });
 });
