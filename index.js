@@ -82,7 +82,7 @@ gsap.from(".c-card", {
 // Text animation
 document.fonts.ready.then(() => {
   //Type writing effect on the hero
-  const textTl = gsap.timeline();
+  const textTl = gsap.timeline({ repeat: -1 });
   textTl
     .set([".mint-coloured_text", ".dark-coloured_text"], {
       opacity: 0,
@@ -99,7 +99,55 @@ document.fonts.ready.then(() => {
       delimiter: "",
       duration: 1,
       opacity: 1,
-    });
+    })
+    .set(
+      [".mint-coloured_text", ".dark-coloured_text"],
+      {
+        opacity: 0,
+        text: "",
+      },
+      "<5"
+    )
+    .to(".mint-coloured_text", {
+      text: "One Platform,",
+      delimiter: "",
+      duration: 1,
+      opacity: 1,
+    })
+    .to(".dark-coloured_text", {
+      text: "Payment for Everyone.",
+      delimiter: "",
+      duration: 1.5,
+      opacity: 1,
+    })
+    .set(
+      [".mint-coloured_text", ".dark-coloured_text"],
+      {
+        opacity: 0,
+        text: "",
+      },
+      "<5"
+    )
+    .to(".mint-coloured_text", {
+      text: "Powering Business Payments,",
+      delimiter: "",
+      duration: 1,
+      opacity: 1,
+    })
+    .to(".dark-coloured_text", {
+      text: "Locally and Globally.",
+      delimiter: "",
+      duration: 1,
+      opacity: 1,
+    })
+    .set(
+      [".mint-coloured_text", ".dark-coloured_text"],
+      {
+        opacity: 0,
+        text: "",
+      },
+      "<5"
+    );
 
   // Heading text animation words flowing from below
   // const headerText = document.querySelectorAll("[data-title]");
