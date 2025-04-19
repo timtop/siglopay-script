@@ -129,13 +129,13 @@ document.fonts.ready.then(() => {
       "<5"
     )
     .to(".mint-coloured_text", {
-      text: "Powering Business Payments,",
+      text: "Simple local and Global,",
       delimiter: "",
       duration: 1,
       opacity: 1,
     })
     .to(".dark-coloured_text", {
-      text: "Locally and Globally.",
+      text: "Business Payments.",
       delimiter: "",
       duration: 1,
       opacity: 1,
