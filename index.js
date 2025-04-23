@@ -1,4 +1,4 @@
-alert("This is working script");
+// alert("This is working script");
 gsap.registerPlugin(ScrollTrigger, TextPlugin, SplitText);
 
 // Check screen size
