@@ -1,4 +1,4 @@
-// alert("This is working script");
+alert("This is working script");
 gsap.registerPlugin(ScrollTrigger, TextPlugin, SplitText);
 
 // Check screen size
@@ -205,4 +205,28 @@ document.fonts.ready.then(() => {
       },
     });
   });
+});
+
+const navbar = document.querySelector(".c-nav");
+const navbarHeight = navbar.offsetHeight;
+let shadowApplied = false;
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  if (scrollY > navbarHeight && !shadowApplied) {
+    gsap.to(".c-nav", {
+      // duration: 0.1,
+      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+      ease: "power2.out",
+    });
+    shadowApplied = true;
+  } else if (scrollY <= navbarHeight && shadowApplied) {
+    gsap.to(".c-nav", {
+      // duration: 0.1,
+      boxShadow: "0px 0px 0px rgba(0, 0, 0, 0)",
+      ease: "power2.out",
+    });
+    shadowApplied = false;
+  }
 });
